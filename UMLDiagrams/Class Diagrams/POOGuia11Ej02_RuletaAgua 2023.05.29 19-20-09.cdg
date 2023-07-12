@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="POOGuia11Ej02_RuletaAgua">
+  <ClassDiagramComponents>
+    <Class name="Juego" package="entidades" visibility="public" xPosition="35.0" yPosition="380.0">
+      <Fields>
+        <Field name="jugadores" type="ArrayList&lt;Jugador&gt;" visibility="private"/>
+        <Field name="rAgua" type="RevolverAgua" visibility="private"/>
+        <Field name="rs" type="RevolverService" visibility="private"/>
+        <Field name="js" type="JugadorService" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getJugadores" returnType="ArrayList&lt;Jugador&gt;" visibility="public"/>
+        <Method name="setJugadores" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Jugador&gt;" name="jugadores"/>
+        </Method>
+        <Method name="getrAgua" returnType="RevolverAgua" visibility="public"/>
+        <Method name="setrAgua" returnType="void" visibility="public">
+          <Argument type="RevolverAgua" name="rAgua"/>
+        </Method>
+        <Method name="mostrarJugadores" returnType="void" visibility="public"/>
+        <Method name="llenarJuego" returnType="void" visibility="public"/>
+        <Method name="ronda" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Jugador" package="entidades" visibility="public" xPosition="35.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mojado" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Boolean" name="mojado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="isMojado" returnType="Boolean" visibility="public"/>
+        <Method name="setMojado" returnType="void" visibility="public">
+          <Argument type="Boolean" name="mojado"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RevolverAgua" package="entidades" visibility="public" xPosition="937.0" yPosition="20.0">
+      <Fields>
+        <Field name="posicionActual" type="Integer" visibility="private"/>
+        <Field name="posicionAgua" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="posicionActual"/>
+          <Argument type="Integer" name="posicionAgua"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPosicionActual" returnType="Integer" visibility="public"/>
+        <Method name="setPosicionActual" returnType="void" visibility="public">
+          <Argument type="Integer" name="posicionActual"/>
+        </Method>
+        <Method name="getPosicionAgua" returnType="Integer" visibility="public"/>
+        <Method name="setPosicionAgua" returnType="void" visibility="public">
+          <Argument type="Integer" name="posicionAgua"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="POOGuia11Ej02" package="main" visibility="public" xPosition="1021.0" yPosition="475.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="JugadorService" package="servicios" visibility="public" xPosition="416.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearJugadores" returnType="ArrayList&lt;Jugador&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Jugador&gt;" name="jugadores"/>
+        </Method>
+        <Method name="disparo" returnType="boolean" visibility="public">
+          <Argument type="RevolverAgua" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RevolverService" package="servicios" visibility="public" xPosition="508.0" yPosition="525.0">
+      <Fields>
+        <Field name="r" type="RevolverAgua" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarRevolver" returnType="void" visibility="public">
+          <Argument type="RevolverAgua" name="rAgua"/>
+        </Method>
+        <Method name="mojar" returnType="boolean" visibility="public">
+          <Argument type="RevolverAgua" name="aux"/>
+        </Method>
+        <Method name="siguienteChorro" returnType="void" visibility="public">
+          <Argument type="RevolverAgua" name="aux"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="jugadores" source="entidades.Juego" target="entidades.Jugador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Jugador&gt;"/>
+    <HasRelation name="r" source="servicios.RevolverService" target="entidades.RevolverAgua" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="servicios.JugadorService" target="entidades.RevolverAgua" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="js" source="entidades.Juego" target="servicios.JugadorService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="servicios.JugadorService" target="entidades.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rAgua" source="entidades.Juego" target="entidades.RevolverAgua" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Juego" target="entidades.RevolverAgua" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rs" source="entidades.Juego" target="servicios.RevolverService" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="servicios.RevolverService" target="entidades.RevolverAgua" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Juego" target="entidades.Jugador" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

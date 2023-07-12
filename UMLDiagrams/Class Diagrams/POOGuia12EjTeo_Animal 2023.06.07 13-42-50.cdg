@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="POOGuia12EjTeo_Animal">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="entidades" visibility="public" xPosition="309.0" yPosition="71.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gato" package="entidades" visibility="public" xPosition="217.0" yPosition="230.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Perro" package="entidades" visibility="public" xPosition="402.0" yPosition="230.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="hacerRuido" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="POOGuia12EjTeo" package="main" visibility="public" xPosition="24.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="FiguraGeometrica" package="entidades" visibility="public" xPosition="32.0" yPosition="139.0">
+      <Methods>
+        <Method name="dibujarFigura" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="entidades.Gato" target="entidades.Animal"/>
+    <IsRelation name="is" source="entidades.Perro" target="entidades.Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
