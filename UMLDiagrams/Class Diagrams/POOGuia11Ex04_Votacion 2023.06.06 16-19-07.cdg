@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="POOGuia11Ex04_Votacion">
+  <ClassDiagramComponents>
+    <Class name="Alumno" package="entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreCompleto" type="String" visibility="private"/>
+        <Field name="dni" type="Integer" visibility="private"/>
+        <Field name="cantidadVotos" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreCompleto"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="Integer" name="cantidadVotos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombreCompleto" returnType="String" visibility="public"/>
+        <Method name="setNombreCompleto" returnType="void" visibility="public">
+          <Argument type="String" name="nombreCompleto"/>
+        </Method>
+        <Method name="getDni" returnType="Integer" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="Integer" name="dni"/>
+        </Method>
+        <Method name="getCantidadVotos" returnType="Integer" visibility="public"/>
+        <Method name="setCantidadVotos" returnType="void" visibility="public">
+          <Argument type="Integer" name="cantidadVotos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Simulador" package="entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombres" type="String[]" visibility="private"/>
+        <Field name="apellidos" type="String[]" visibility="private"/>
+        <Field name="r" type="Random" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generadorAlumnos" returnType="ArrayList&lt;Alumno&gt;" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="crearNombres" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="crearDocumentos" returnType="Integer[]" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="creadorAlumnos" returnType="ArrayList&lt;Alumno&gt;" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="mostrarAlumnos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="alumnos"/>
+        </Method>
+        <Method name="votacion" returnType="ArrayList&lt;Voto&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="alumnos"/>
+        </Method>
+        <Method name="imprimirVotaciones" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Voto&gt;" name="votacion"/>
+        </Method>
+        <Method name="recuentoVotos" returnType="ArrayList&lt;Alumno&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Voto&gt;" name="votacion"/>
+        </Method>
+        <Method name="nombrarFacilitadores" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Voto&gt;" name="votacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Voto" package="entidades" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="alumno" type="Alumno" visibility="private"/>
+        <Field name="alumnos" type="ArrayList&lt;Alumno&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+          <Argument type="ArrayList&lt;Alumno&gt;" name="alumnos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAlumno" returnType="Alumno" visibility="public"/>
+        <Method name="setAlumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="getAlumnos" returnType="ArrayList&lt;Alumno&gt;" visibility="public"/>
+        <Method name="setAlumnos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="alumnos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="POOGuia11Ex04" package="main" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Comparadores" package="utilidades" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="comparaVotos" type="Comparator&lt;Alumno&gt;" visibility="public" isStatic="true"/>
+        <Field name="comparaVotosporVoto" type="Comparator&lt;Voto&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="entidades.Simulador" target="entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entidades.Voto" target="entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="comparaVotosporVoto" source="utilidades.Comparadores" target="entidades.Voto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno" source="entidades.Voto" target="entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumnos" source="entidades.Voto" target="entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Alumno&gt;"/>
+    <UseRelation source="entidades.Simulador" target="entidades.Voto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="comparaVotos" source="utilidades.Comparadores" target="entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

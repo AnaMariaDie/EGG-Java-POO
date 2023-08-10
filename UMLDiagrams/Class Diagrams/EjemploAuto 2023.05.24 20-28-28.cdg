@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjemploAuto">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="entidades" visibility="public" xPosition="24.0" yPosition="343.0">
+      <Fields>
+        <Field name="cantPuertas" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cantPuertas"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="prenderAire" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getCantPuertas" returnType="int" visibility="public"/>
+        <Method name="setCantPuertas" returnType="void" visibility="public">
+          <Argument type="int" name="cantPuertas"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Moto" package="entidades" visibility="public" xPosition="473.0" yPosition="343.0">
+      <Fields>
+        <Field name="cilindrada" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="cilindrada"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCilindrada" returnType="int" visibility="public"/>
+        <Method name="setCilindrada" returnType="void" visibility="public">
+          <Argument type="int" name="cilindrada"/>
+        </Method>
+        <Method name="ponerseCasco" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="entidades" visibility="public" xPosition="231.0" yPosition="5.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="arrancar" returnType="void" visibility="public"/>
+        <Method name="frenar" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="main" visibility="public" xPosition="24.0" yPosition="58.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="entidades.Auto" target="entidades.Vehiculo"/>
+    <IsRelation name="is" source="entidades.Moto" target="entidades.Vehiculo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

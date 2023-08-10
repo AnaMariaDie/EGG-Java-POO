@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="POOGuia12Ex02_Edificio">
+  <ClassDiagramComponents>
+    <Class name="Edificio" package="entidades" visibility="public" isAbstract="true" xPosition="14.0" yPosition="143.0">
+      <Fields>
+        <Field name="ancho" type="float" visibility="protected"/>
+        <Field name="alto" type="float" visibility="protected"/>
+        <Field name="largo" type="float" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="float" name="ancho"/>
+          <Argument type="float" name="alto"/>
+          <Argument type="float" name="largo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getAncho" returnType="float" visibility="public"/>
+        <Method name="setAncho" returnType="void" visibility="public">
+          <Argument type="float" name="ancho"/>
+        </Method>
+        <Method name="getAlto" returnType="float" visibility="public"/>
+        <Method name="setAlto" returnType="void" visibility="public">
+          <Argument type="float" name="alto"/>
+        </Method>
+        <Method name="getLargo" returnType="float" visibility="public"/>
+        <Method name="setLargo" returnType="void" visibility="public">
+          <Argument type="float" name="largo"/>
+        </Method>
+        <Method name="calcularSuperficie" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="calcularVolumen" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EdificioDeOficinas" package="entidades" visibility="public" xPosition="383.0" yPosition="306.0">
+      <Fields>
+        <Field name="numeroOficinas" type="int" visibility="private"/>
+        <Field name="cantPersonasOficina" type="int" visibility="private"/>
+        <Field name="numeroPisos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numeroOficinas"/>
+          <Argument type="int" name="cantPersonasOficina"/>
+          <Argument type="int" name="numeroPisos"/>
+          <Argument type="float" name="ancho"/>
+          <Argument type="float" name="alto"/>
+          <Argument type="float" name="largo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularSuperficie" returnType="float" visibility="public"/>
+        <Method name="calcularVolumen" returnType="float" visibility="public"/>
+        <Method name="cantidadPersonasPiso" returnType="int" visibility="public"/>
+        <Method name="cantidadPersonasEdificio" returnType="int" visibility="public"/>
+        <Method name="getNumeroOficinas" returnType="int" visibility="public"/>
+        <Method name="setNumeroOficinas" returnType="void" visibility="public">
+          <Argument type="int" name="numeroOficinas"/>
+        </Method>
+        <Method name="getCantPersonasOficina" returnType="int" visibility="public"/>
+        <Method name="setCantPersonasOficina" returnType="void" visibility="public">
+          <Argument type="int" name="cantPersonasOficina"/>
+        </Method>
+        <Method name="getNumeroPisos" returnType="int" visibility="public"/>
+        <Method name="setNumeroPisos" returnType="void" visibility="public">
+          <Argument type="int" name="numeroPisos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Polideportivo" package="entidades" visibility="public" xPosition="383.0" yPosition="3.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="tipoInstalacion" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="boolean" name="tipoInstalacion"/>
+          <Argument type="float" name="ancho"/>
+          <Argument type="float" name="alto"/>
+          <Argument type="float" name="largo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularSuperficie" returnType="float" visibility="public"/>
+        <Method name="calcularVolumen" returnType="float" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="isTipoInstalacion" returnType="boolean" visibility="public"/>
+        <Method name="setTipoInstalacion" returnType="void" visibility="public">
+          <Argument type="boolean" name="tipoInstalacion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="POOGuia12Ex02" package="main" visibility="public" xPosition="25.0" yPosition="3.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="entidades.EdificioDeOficinas" target="entidades.Edificio"/>
+    <IsRelation name="is" source="entidades.Polideportivo" target="entidades.Edificio"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

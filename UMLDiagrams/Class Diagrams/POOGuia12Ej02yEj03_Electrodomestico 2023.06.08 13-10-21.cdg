@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="POOGuia12Ej02yEj03_Electrodomestico">
+  <ClassDiagramComponents>
+    <Class name="Electrodomestico" package="entidades" visibility="public" xPosition="7.0" yPosition="289.0">
+      <Fields>
+        <Field name="precio" type="double" visibility="protected"/>
+        <Field name="color" type="String" visibility="protected"/>
+        <Field name="consumoEnergetico" type="char" visibility="protected"/>
+        <Field name="peso" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="precio"/>
+          <Argument type="String" name="color"/>
+          <Argument type="char" name="consumoEnergetico"/>
+          <Argument type="int" name="peso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getConsumoEnergetico" returnType="char" visibility="public"/>
+        <Method name="setConsumoEnergetico" returnType="void" visibility="public">
+          <Argument type="char" name="consumoEnergetico"/>
+        </Method>
+        <Method name="getPeso" returnType="int" visibility="public"/>
+        <Method name="setPeso" returnType="void" visibility="public">
+          <Argument type="int" name="peso"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Lavadora" package="entidades" visibility="public" xPosition="7.0" yPosition="1.0">
+      <Fields>
+        <Field name="carga" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Electrodomestico" name="e"/>
+          <Argument type="int" name="carga"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="double" name="precio"/>
+          <Argument type="String" name="color"/>
+          <Argument type="char" name="consumoEnergetico"/>
+          <Argument type="int" name="peso"/>
+          <Argument type="int" name="carga"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCarga" returnType="int" visibility="public"/>
+        <Method name="setCarga" returnType="void" visibility="public">
+          <Argument type="int" name="carga"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Televisor" package="entidades" visibility="public" xPosition="7.0" yPosition="703.0">
+      <Fields>
+        <Field name="resolucion" type="int" visibility="private"/>
+        <Field name="sintonizadorTDT" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Electrodomestico" name="e"/>
+          <Argument type="int" name="resolucion"/>
+          <Argument type="boolean" name="sintonizadorTDT"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="double" name="precio"/>
+          <Argument type="String" name="color"/>
+          <Argument type="char" name="consumoEnergetico"/>
+          <Argument type="int" name="peso"/>
+          <Argument type="int" name="resolucion"/>
+          <Argument type="boolean" name="sintonizadorTDT"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getResolucion" returnType="int" visibility="public"/>
+        <Method name="setResolucion" returnType="void" visibility="public">
+          <Argument type="int" name="resolucion"/>
+        </Method>
+        <Method name="isSintonizadorTDT" returnType="boolean" visibility="public"/>
+        <Method name="setSintonizadorTDT" returnType="void" visibility="public">
+          <Argument type="boolean" name="sintonizadorTDT"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="POOGuia12Ej02" package="main" visibility="public" xPosition="845.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ElectrodomesticoService" package="servicios" visibility="public" xPosition="567.0" yPosition="384.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="comprobarConsumoEnergetico" returnType="char" visibility="private">
+          <Argument type="char" name="letra"/>
+        </Method>
+        <Method name="comprobarColor" returnType="String" visibility="private">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="crearElectrodomestico" returnType="Electrodomestico" visibility="public"/>
+        <Method name="precioFinal" returnType="double" visibility="public">
+          <Argument type="Electrodomestico" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LavadoraService" package="servicios" visibility="public" xPosition="567.0" yPosition="39.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearLavadora" returnType="Lavadora" visibility="public"/>
+        <Method name="precioFinal" returnType="double" visibility="public">
+          <Argument type="Lavadora" name="lavadora"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TelevisorService" package="servicios" visibility="public" xPosition="714.0" yPosition="769.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearTelevisor" returnType="Televisor" visibility="public"/>
+        <Method name="precioFinal" returnType="double" visibility="public">
+          <Argument type="Televisor" name="tele"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="entidades.Lavadora" target="entidades.Electrodomestico"/>
+    <IsRelation name="is" source="servicios.LavadoraService" target="servicios.ElectrodomesticoService"/>
+    <UseRelation source="servicios.LavadoraService" target="entidades.Lavadora" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="servicios.TelevisorService" target="servicios.ElectrodomesticoService"/>
+    <UseRelation source="servicios.ElectrodomesticoService" target="entidades.Electrodomestico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="servicios.TelevisorService" target="entidades.Televisor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="entidades.Televisor" target="entidades.Electrodomestico"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

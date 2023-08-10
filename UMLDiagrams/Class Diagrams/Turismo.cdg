@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Turismo">
+  <ClassDiagramComponents>
+    <Class name="Alojamiento" package="" visibility="public" xPosition="132.0" yPosition="7.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="Localidad" type="String" visibility="private"/>
+        <Field name="encargado" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Hotel" package="" visibility="public" xPosition="40.0" yPosition="201.0">
+      <Fields>
+        <Field name="cantHabitaciones" type="int" visibility="private"/>
+        <Field name="numCamas" type="int" visibility="private"/>
+        <Field name="cantPisos" type="int" visibility="private"/>
+        <Field name="precioHabitacion" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ExtraHotelero" package="" visibility="public" xPosition="234.0" yPosition="201.0">
+      <Fields>
+        <Field name="privado" type="boolean" visibility="private"/>
+        <Field name="cantMts2" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="FourStars" package="" visibility="public" xPosition="36.0" yPosition="390.0">
+      <Fields>
+        <Field name="gimnasio" type="char" visibility="private"/>
+        <Field name="nomRestaurante" type="String" visibility="private"/>
+        <Field name="capacidadResto" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="FiveStars" package="" visibility="public" xPosition="24.0" yPosition="569.0">
+      <Fields>
+        <Field name="cantSalonesConferencia" type="int" visibility="private"/>
+        <Field name="cantSuites" type="int" visibility="private"/>
+        <Field name="cantLimosinas" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Residencias" package="" visibility="public" xPosition="432.0" yPosition="390.0">
+      <Fields>
+        <Field name="cantHabitaciones" type="int" visibility="private"/>
+        <Field name="descGremio" type="boolean" visibility="private"/>
+        <Field name="campoDepo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Camping" package="" visibility="public" xPosition="234.0" yPosition="390.0">
+      <Fields>
+        <Field name="capacidadMaxCarpas" type="int" visibility="private"/>
+        <Field name="cantBanios" type="int" visibility="private"/>
+        <Field name="resto" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Camping" target="ExtraHotelero"/>
+    <IsRelation name="is" source="Residencias" target="ExtraHotelero"/>
+    <IsRelation name="is" source="ExtraHotelero" target="Alojamiento"/>
+    <IsRelation name="is" source="FiveStars" target="FourStars"/>
+    <IsRelation name="is" source="Hotel" target="Alojamiento"/>
+    <IsRelation name="is" source="FourStars" target="Hotel"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
